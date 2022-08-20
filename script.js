@@ -22,9 +22,11 @@ function comapre(touchElement){
         const boxPostion = boxContainer[i].getBoundingClientRect();
         const x = touchElement.pageX;
         const y = touchElement.pageY;
-        if(((boxPostion.left <= x) && (boxPostion.right >= x)) && ((boxPostion.top <= y) && (boxPostion.bottom >= y))){
-            mobileGame(boxContainer[i]);
-            break;
+        if(!boxContainer[i].classList.contains('hidden')){
+            if(((boxPostion.left <= x) && (boxPostion.right >= x)) && ((boxPostion.top <= y) && (boxPostion.bottom >= y))){
+                mobileGame(boxContainer[i]);
+                break;
+            }
         }
     }
 }
@@ -35,7 +37,6 @@ if(window.mobileCheck()){
     window.addEventListener('touchstart', function(e){
         var touchobj = e.changedTouches[0]
         handleswipe(touchobj.pageX,touchobj.pageY)
-        comapre(touchobj);
     }, false)
  
     window.addEventListener('touchmove', function(e){
@@ -47,7 +48,6 @@ if(window.mobileCheck()){
     window.addEventListener('touchend', function(e){
         var touchobj = e.changedTouches[0]
         handleswipe(touchobj.pageX,touchobj.pageY)
-        comapre(touchobj);
     }, false)
 
 }else{
