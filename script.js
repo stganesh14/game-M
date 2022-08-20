@@ -22,7 +22,7 @@ function comapre(touchElement){
         const boxPostion = boxContainer[i].getBoundingClientRect();
         const x = touchElement.pageX;
         const y = touchElement.pageY;
-        if((boxPostion.left <= x) || (boxPostion.right >= x) || (boxPostion.top <= y) || (boxPostion.bottom >= y)){
+        if(((boxPostion.left <= x) && (boxPostion.right >= x)) && ((boxPostion.top <= y) && (boxPostion.bottom >= y))){
             mobileGame(boxContainer[i]);
             break;
         }
