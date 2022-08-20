@@ -8,7 +8,7 @@ const scoreHeading = document.getElementById('score');
 document.addEventListener('mousemove', e => {
     cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
 })
-document.addEventListener('touchstart', e => {
+document.addEventListener('touchmove', e => {
     cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
 })
 function victory(){
@@ -22,6 +22,16 @@ function checkvictory(){
     }
 }
 game.addEventListener('mousemove', e => {
+    const box = e.target.classList.contains('box')
+    if(box){
+        e.target.classList.add('hidden');
+        score +=1;
+        remainingBoxes -=1;
+        scoreHeading.innerText = "Score : " + score;
+        checkvictory();
+    }
+})
+game.addEventListener('touchmove', e => {
     const box = e.target.classList.contains('box')
     if(box){
         e.target.classList.add('hidden');
