@@ -1,3 +1,4 @@
+alert('For android screen tap the screen for changing the ball position');
 const cursor = document.querySelector('.cursor');
 const body =document.getElementById('body');
 const boxContainer = document.querySelectorAll('.box');
