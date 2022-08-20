@@ -13,7 +13,7 @@ document.addEventListener('touchmove', e => {
 })
 function victory(){
     body.style.backgroundColor = "black";
-    scoreHeading.innerText ="Victory";
+    scoreHeading.innerHTML = "Score : " + score + "<br><br><br>Victory</br></br></br>";
     scoreHeading.style.marginTop = 20 +"%";
 }
 function checkvictory(){
