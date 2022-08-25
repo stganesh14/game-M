@@ -18,7 +18,7 @@ window.mobileCheck = function() {
     return check;
 };
 function generateRandomNumber(){
-    return Math.floor(Math.random() * 100);
+    return Math.floor(Math.random() * 90);
 }
 function mobileGame(ele){
     ele.classList.add('hidden');
